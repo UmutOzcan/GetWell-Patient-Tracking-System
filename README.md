@@ -6,7 +6,8 @@ This readme file gives only basic project information.
 
 <br>
 
----
+## Introduction
+<br>
 
 ### Techs  🚀
 
@@ -20,7 +21,7 @@ This readme file gives only basic project information.
 - Figma
 
 
-<br> <br>
+<br>
 
 
 ### Warning ⚡
@@ -29,8 +30,39 @@ Project content is in Turkish.
 
 <br>
 
-### In addition to ✨
+## Beginning
 
-" This React Native Project is my graduation thesis. "
+Clone this repository on your local machine.
 
-It might be a little bit amatour .
+```
+git clone https://github.com/UmutOzcan/GetWell-Patient-Tracking-System
+```
+
+### Use
+
+To use it after cloning the project:
+
+```
+cd ./GetWell-Patient-Tracking-System
+```
+
+Run the following commands in the project folder to install the project dependencies.
+
+```
+npm init
+npm install
+```
+These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
+
+## Available Scripts
+
+In the project directory you can run:
+```
+npx react-native run-android
+```
+
+<br>
+
+## For more information
+
+You can learn more here: [React documentation](https://reactnative.dev/)
