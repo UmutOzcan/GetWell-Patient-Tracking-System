@@ -11,6 +11,8 @@ import {
 
 import Button from '../components/button/button';
 
+//Karsilama ekranı
+
 function Welcome({navigation}) {
   function goToMemberSign() {
     navigation.navigate('MemberSignScreen');
@@ -36,10 +38,12 @@ function Welcome({navigation}) {
   );
 }
 
+//style tanımlamaları
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#DEF1ED',
+    backgroundColor: 'white',
   },
   header: {
     color: 'black',

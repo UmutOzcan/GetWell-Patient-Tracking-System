@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "706000679627",
+    "project_id": "hasta-takip-app",
+    "storage_bucket": "hasta-takip-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706000679627:android:fdb3e46fae88abcccee14e",
+        "android_client_info": {
+          "package_name": "com.hastatakipapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDksAEYqWG8r-GrpNyezr1DqOkp28npb_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

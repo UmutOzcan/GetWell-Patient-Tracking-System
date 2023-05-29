@@ -75,7 +75,7 @@ function MemberSign({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DEF1ED',
+    backgroundColor: 'white',
   },
   image: {
     marginTop: 30,
