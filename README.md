@@ -15,6 +15,8 @@ This readme file gives only basic project information.
 
 - React Native
 - React Navigation
+- vector-icons
+- Redux
 - Android Studio
 - Node.js 
 - Vs Code
@@ -43,7 +45,7 @@ git clone https://github.com/UmutOzcan/GetWell-Patient-Tracking-System
 To use it after cloning the project:
 
 ```
-cd ./GetWell-Patient-Tracking-System
+cd ./HastaTakipApp
 ```
 
 Run the following commands in the project folder to install the project dependencies.
