@@ -11,10 +11,14 @@ export default StyleSheet.create({
     height: 64,
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 0.7,
+    borderRadius: 10,
+    borderStartWidth: 3,
+    borderEndWidth: 0.1,
   },
 
   text: {
-    color: '#4C5856',
+    color: '#000',
     fontWeight: 'bold',
     fontSize: 20,
   },

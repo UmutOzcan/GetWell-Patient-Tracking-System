@@ -11,8 +11,10 @@ const HomeView = ({navigation}) => {
   }
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <Text style={styles.label}>Bugün Yapılacaklar</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.label}>Bugün Yapılacaklar</Text>
+      </View>
       <View>
         <Calendar />
       </View>
@@ -22,12 +24,21 @@ const HomeView = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+
   label: {
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
-    marginVertical: 20,
+    justifyContent: 'space-between',
     color: 'black',
+    marginVertical: 30,
+    marginHorizontal: 10,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
   },
   message: {
     color: 'black',

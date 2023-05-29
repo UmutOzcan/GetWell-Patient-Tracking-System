@@ -45,6 +45,7 @@ const week = [
 const Calendar = () => {
   //gün ve hafta bilgierlini moment ile alıp format ile değiştirdik
   const today = moment().format('D');
+  console.log({today});
 
   function tip({bugun}) {
     if (today == bugun) {
@@ -103,14 +104,16 @@ const styles = StyleSheet.create({
     borderEndWidth: 0.1,
     borderBottomWidth: 2,
     borderTopWidth: 1,
-    borderRadius: 20,
+    borderRadius: 10,
     borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#B5EEE4',
+    marginHorizontal: 1.5,
   },
   text: {
     fontWeight: 'bold',
+    color: 'black',
   },
   number: {
     margin: 8,
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
   today: {
     marginTop: 30,
     fontWeight: 'bold',
-    marginBottom: 410,
+    marginBottom: 380,
     color: 'black',
     fontSize: 20,
     textAlign: 'center',
