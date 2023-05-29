@@ -14,9 +14,10 @@ export default Dot;
 
 const styles = StyleSheet.create({
   container: {
-    height: 7,
-    width: 7,
+    height: 8,
+    width: 8,
     borderRadius: 7,
+    borderWidth: 0.5,
     backgroundColor: 'red',
   },
 });

@@ -10,11 +10,6 @@ export default StyleSheet.create({
     flex: 1,
     borderBottomWidth: 1,
     margin: 5,
-  },
-  image: {
-    marginHorizontal: 10,
-    marginTop: 20,
-    width: 35,
-    height: 35,
+    marginLeft: 10,
   },
 });

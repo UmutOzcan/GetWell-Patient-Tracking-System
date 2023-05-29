@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
   ScrollView,
+  Dimensions,
 } from 'react-native';
 
 import Button from '../components/button/button';
@@ -21,7 +22,7 @@ function Welcome({navigation}) {
         <View>
           <Image
             style={styles.image}
-            source={require('../images/doctor.jpg')}
+            source={require('../images/doctor.png')}
           />
         </View>
         <Text style={styles.header}> Hoş Geldiniz </Text>
@@ -54,8 +55,9 @@ const styles = StyleSheet.create({
     marginBottom: 150,
   },
   image: {
-    position: 'relative',
-    alignSelf: 'center',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height * 0.3,
+    resizeMode: 'contain',
     marginTop: 100,
   },
 });

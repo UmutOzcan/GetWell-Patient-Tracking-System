@@ -51,14 +51,15 @@ function MemberSign({navigation}) {
           </View>
           <View style={styles.inputs}>
             <Input
-              image={require('../images/user.png')}
+              iconName={'account'}
               placeholder="Kullanıcı adınızı giriniz "
               onChangeText={setUserName}
             />
             <Input
-              image={require('../images/password.png')}
+              iconName={'lock'}
               placeholder="Parolanızı giriniz "
               onChangeText={setPassword}
+              isSecure
             />
           </View>
           <View style={styles.buton}>

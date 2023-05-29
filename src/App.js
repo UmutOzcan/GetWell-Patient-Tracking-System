@@ -2,13 +2,15 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Image} from 'react-native';
+
 import Welcome from './views/welcome';
 import MemberSign from './views/membersign';
 import HomeView from './views/home';
 import ExerciseView from './views/exercise';
 import MedicineView from './views/medicine';
 import ProfileView from './views/profile';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/FontAwesome';
 
 import moment from 'moment';
 import 'moment/locale/tr';
@@ -25,32 +27,31 @@ function TabScreen() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveBackgroundColor: '#48cfb8',
+        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: 'black',
+        tabBarItemStyle: {
+          borderRightWidth: 0.3,
+          borderLeftWidth: 0.3,
+        },
         tabBarStyle: {
-          backgroundColor: '#B5EEE4',
-          height: 56,
+          height: 50,
+          backgroundColor: 'white',
         },
       }}>
       <Tab.Screen
         name="Exercise"
         component={ExerciseView}
         options={{
-          tabBarIcon: () => (
-            <Image
-              source={require('./images/bicycle-outline.png')}
-              style={{width: 35, height: 30}}
-            />
-          ),
+          tabBarIcon: ({color}) => <Icon name="run" size={30} color={color} />,
         }}
       />
       <Tab.Screen
         name="Home"
         component={HomeView}
         options={{
-          tabBarIcon: () => (
-            <Image
-              source={require('./images/home-outline.png')}
-              style={{width: 35, height: 30}}
-            />
+          tabBarIcon: ({color}) => (
+            <Icon2 name="home" size={30} color={color} />
           ),
         }}
       />
@@ -58,12 +59,9 @@ function TabScreen() {
         name="Medicine"
         component={MedicineView}
         options={{
-          tabBarIcon: () => (
-            <Image
-              source={require('./images/medkit-outline.png')}
-              style={{width: 35, height: 30}}
-            />
-          ),
+          tabBarBadge: 3,
+          tabBarBadgeStyle: {borderWidth: 0.5},
+          tabBarIcon: ({color}) => <Icon name="pill" size={30} color={color} />,
         }}
       />
     </Tab.Navigator>
