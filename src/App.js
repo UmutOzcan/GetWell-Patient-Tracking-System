@@ -4,7 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Welcome from './views/welcome';
-import MemberSign from './views/membersign';
+import Admin from './views/admin';
+import LogIn from './views/logIn';
 import HomeView from './views/home';
 import ExerciseView from './views/exercise';
 import MedicineView from './views/medicine';
@@ -14,8 +15,9 @@ import Icon2 from 'react-native-vector-icons/FontAwesome';
 
 import moment from 'moment';
 import 'moment/locale/tr';
-
 moment.locale('tr');
+//error handle ederek banner çıkarmak için
+import FlashMessage from 'react-native-flash-message';
 
 const Tab = createBottomTabNavigator();
 
@@ -74,8 +76,8 @@ function GirisScreen() {
   return (
     <GirisStack.Navigator screenOptions={{headerShown: false}}>
       <GirisStack.Screen name="WelcomeScreen" component={Welcome} />
-      <GirisStack.Screen name="MemberSignScreen" component={MemberSign} />
       <GirisStack.Screen name="HomeScreen" component={HomeView} />
+      <GirisStack.Screen name="LogIn" component={LogIn} />
     </GirisStack.Navigator>
   );
 }
@@ -89,6 +91,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="GirisScreen" component={GirisScreen} />
+        <Stack.Screen name="AdminScreen" component={Admin} />
         <Stack.Screen
           name="ProfileScreen"
           component={ProfileView}
@@ -96,6 +99,7 @@ const App = () => {
         />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 };

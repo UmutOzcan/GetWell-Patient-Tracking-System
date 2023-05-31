@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './input.style';
 
-function input({onChangeText, placeholder, iconName, isSecure}) {
+function input({onType, placeholder, iconName, isSecure, value}) {
   return (
     <View style={styles.container}>
       <View
@@ -15,8 +15,10 @@ function input({onChangeText, placeholder, iconName, isSecure}) {
       </View>
       <View style={styles.input_container}>
         <TextInput
+          autoCapitalize="none"
           placeholder={placeholder}
-          onChangeText={onChangeText}
+          onChangeText={onType}
+          value={value}
           secureTextEntry={isSecure}
         />
       </View>

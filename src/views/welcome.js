@@ -14,8 +14,9 @@ import Button from '../components/button/button';
 //Karsilama ekranı
 
 function Welcome({navigation}) {
+  //devam et e basılınca giriş sayfasına yönlendirir
   function goToMemberSign() {
-    navigation.navigate('MemberSignScreen');
+    navigation.navigate('LogIn');
   }
 
   return (
@@ -32,7 +33,7 @@ function Welcome({navigation}) {
           {' '}
           Uygulamamızda Hasta Takip ve Bilgilendirme servisleri bulunmaktadır.{' '}
         </Text>
-        <Button text="Giriş Yap" onPress={goToMemberSign} />
+        <Button text=" Devam Et " onPress={goToMemberSign} theme="primary" />
       </SafeAreaView>
     </ScrollView>
   );

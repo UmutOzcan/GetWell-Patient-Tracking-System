@@ -1,12 +1,22 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Text, ActivityIndicator} from 'react-native';
 
 import styles from './button.style';
 
-const button = ({text, onPress}) => {
+//buttonun modeli ve aşağıdaki özellikleri componenetten dinamik olarak aktarılabilir theme yazılmazsa primary initialize edilir
+//on press basıldığında ne olucak
+//loading bir yönlendirmede gecikme varsa bekletir
+const button = ({text, loading, onPress, theme = 'primary'}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
+    <TouchableOpacity
+      style={styles[theme].container}
+      onPress={onPress}
+      disabled={loading}>
+      {loading ? (
+        <ActivityIndicator color={'white'} />
+      ) : (
+        <Text style={styles[theme].text}>{text}</Text>
+      )}
     </TouchableOpacity>
   );
 };
