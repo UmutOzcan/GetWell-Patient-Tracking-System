@@ -39,12 +39,21 @@ function Admin({navigation}) {
   function handleSubmit() {
     navigation.navigate('TabScreen');
   }
-  function goToTabScrren() {
-    navigation.navigate('TabScreen');
+  function goToEditScreen() {
+    navigation.navigate('AdminControlScreen');
   }
 
   //form degerlerini submit etmeden kontrol etmek icin
   async function handleFormSubmit(formValues) {
+    if (
+      !formValues.usermail ||
+      !formValues.password ||
+      !formValues.repassword
+    ) {
+      Alert.alert('GetWell Hasta Takip Sistemi', 'Bilgiler boş bırakılamaz!');
+      return;
+    }
+
     if (formValues.password !== formValues.repassword) {
       showMessage({
         message: 'Şifreler uyuşmuyor !',
@@ -63,8 +72,8 @@ function Admin({navigation}) {
         message: 'Hasta kaydı oluşturuldu .',
         type: 'success',
       });
-
-      //navigation.navigate('AdminControlScreen');
+      //hasta kaydı oluşturunca yönlendir
+      navigation.navigate('AdminControlScreen');
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -73,6 +82,10 @@ function Admin({navigation}) {
         type: 'danger',
       });
     }
+  }
+
+  function goToExit() {
+    auth().signOut();
   }
 
   return (
@@ -118,9 +131,10 @@ function Admin({navigation}) {
                   />
                   <Button
                     text="Var Olan hastaya ekleme yap"
-                    onPress={goToTabScrren}
+                    onPress={goToEditScreen}
                     loading={loading}
                   />
+                  <Button text="Çıkış Yap" onPress={goToExit} />
                 </View>
               </>
             )}

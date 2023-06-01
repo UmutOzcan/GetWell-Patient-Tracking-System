@@ -13,13 +13,17 @@ import {
 
 //state yapılarını daha performanslı ve düzgün kontrol etmek için
 import {Formik} from 'formik';
+
 //hazırladığımız componentslerden buton ve input comps çektik
 import Button from '../components/button/button';
 import Input from '../components/Input';
+
 //firebase auth library
 import auth from '@react-native-firebase/auth';
+
 //flash message imports
 import {showMessage} from 'react-native-flash-message';
+
 //error codeları utils ile metinlere dönüştürdük
 import authErrorMessagesParser from '../utils/authErrorMessagesParser';
 
@@ -27,34 +31,29 @@ import authErrorMessagesParser from '../utils/authErrorMessagesParser';
 const initialFormValues = {
   usermail: '',
   password: '',
-  usermode: '',
 };
 
 function LogIn({navigation}) {
   //veri gelene kadar buton loading state de kalması için oluşturduk
   const [loading, setLoading] = useState(false);
 
-  // giriş yapmak için kullanılan func
-  function handleLogIn() {
-    navigation.navigate('AdminScreen');
-    //navigation.navigate('TabScreen');
-
-    //if (usermode == 'admin') {
-    //navigation.navigate('AdminScreen');
-    //}
-  }
-
   //form değerlerini submit ettik async ve await kullandık bilgiler dönene kadar beklemesi için
   async function handleFormSubmit(formValues) {
+    //bilgiler bossa alert döndür
+    if (!formValues.usermail || !formValues.password) {
+      Alert.alert('GetWell Hasta Takip Sistemi', 'Bilgiler boş bırakılamaz!');
+      return;
+    }
+
     try {
       setLoading(true);
       await auth().signInWithEmailAndPassword(
         formValues.usermail,
         formValues.password,
       );
+
       setLoading(false);
     } catch (error) {
-      console.log(error);
       showMessage({
         message: authErrorMessagesParser(error.code),
         type: 'danger',
@@ -102,11 +101,6 @@ function LogIn({navigation}) {
                   <Button
                     text="Giriş Yap"
                     onPress={handleSubmit}
-                    loading={loading}
-                  />
-                  <Button
-                    text="Admin"
-                    onPress={handleLogIn}
                     loading={loading}
                   />
                 </View>
