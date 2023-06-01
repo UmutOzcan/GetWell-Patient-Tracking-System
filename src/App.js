@@ -5,11 +5,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Welcome from './views/welcome';
 import Admin from './views/admin';
+import AdminControlScreen from './views/admincontrol';
 import LogIn from './views/logIn';
 import HomeView from './views/home';
 import ExerciseView from './views/exercise';
 import MedicineView from './views/medicine';
-import ProfileView from './views/profile';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
 
@@ -18,6 +18,9 @@ import 'moment/locale/tr';
 moment.locale('tr');
 //error handle ederek banner çıkarmak için
 import FlashMessage from 'react-native-flash-message';
+
+//firabase session için auth ekledik
+import auth from '@react-native-firebase/auth';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,8 +64,6 @@ function TabScreen() {
         name="Medicine"
         component={MedicineView}
         options={{
-          tabBarBadge: 3,
-          tabBarBadgeStyle: {borderWidth: 0.5},
           tabBarIcon: ({color}) => <Icon name="pill" size={30} color={color} />,
         }}
       />
@@ -85,20 +86,33 @@ function GirisScreen() {
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const [userSession, setUserSession] = React.useState();
+
+  React.useEffect(() => {
+    auth().onAuthStateChanged(user => {
+      setUserSession(!!user);
+    });
+  }, []);
+
   return (
     //diğer stack screen ile üst üste gelmesin diye headerShown : false yaptık
     //farklı viewlerden alırken componentlere dikkat edelim
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="GirisScreen" component={GirisScreen} />
-        <Stack.Screen name="AdminScreen" component={Admin} />
-        <Stack.Screen
-          name="ProfileScreen"
-          component={ProfileView}
-          options={{headerShown: true}}
-        />
-        <Stack.Screen name="TabScreen" component={TabScreen} />
+        {!userSession ? (
+          <Stack.Screen name="GirisScreen" component={GirisScreen} />
+        ) : (
+          <>
+            <Stack.Screen name="TabScreen" component={TabScreen} />
+            <Stack.Screen name="AdminScreen" component={Admin} />
+            <Stack.Screen
+              name="AdminControlScreen"
+              component={AdminControlScreen}
+            />
+          </>
+        )}
       </Stack.Navigator>
+
       <FlashMessage position="top" />
     </NavigationContainer>
   );

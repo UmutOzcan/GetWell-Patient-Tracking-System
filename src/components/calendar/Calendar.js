@@ -45,15 +45,6 @@ const week = [
 const Calendar = () => {
   //gün ve hafta bilgierlini moment ile alıp format ile değiştirdik
   const today = moment().format('D');
-  console.log({today});
-
-  function tip({bugun}) {
-    if (today == bugun) {
-      return 'red';
-    } else {
-      return 'white';
-    }
-  }
 
   const week = getCurrentWeekDays().map(item => ({
     title: moment(item).format('ddd'),
@@ -122,7 +113,6 @@ const styles = StyleSheet.create({
   today: {
     marginTop: 30,
     fontWeight: 'bold',
-    marginBottom: 380,
     color: 'black',
     fontSize: 20,
     textAlign: 'center',

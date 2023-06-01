@@ -6,7 +6,7 @@ const base_style = StyleSheet.create({
     borderRadius: 25,
     padding: 10,
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 20,
     marginHorizontal: 30,
     height: 64,
     alignItems: 'center',
