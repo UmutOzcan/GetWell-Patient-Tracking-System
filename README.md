@@ -11,18 +11,20 @@ This readme file gives only basic project information.
 ## Introduction
 <br>
 
-### Techs  🚀
+### Techs, Libs & Packages  🚀
 
 <br>
 
 - React Native
 - React Navigation
 - vector-icons
-- Redux
+- Formik
+- Firebase
+- flash-messages
 - Android Studio
 - Node.js 
 - Vs Code
-- Figma
+
 
 
 <br>
