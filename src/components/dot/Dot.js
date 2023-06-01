@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-//eger success ise dot ekle
+//calendar dan dönen deger eger success ise dot ekle
 const Dot = () => {
   return (
     <View style={styles.container}>
