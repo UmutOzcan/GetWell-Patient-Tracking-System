@@ -18,7 +18,9 @@ This readme file gives only basic project information.
 - React Native
 - React Navigation
 - vector-icons
-- Redux
+- Formik
+- Firebase
+- flash-messages
 - Android Studio
 - Node.js 
 - Vs Code
