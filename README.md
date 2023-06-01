@@ -11,7 +11,7 @@ This readme file gives only basic project information.
 ## Introduction
 <br>
 
-### Techs  🚀
+### Techs, Libs & Packages  🚀
 
 <br>
 
@@ -24,7 +24,7 @@ This readme file gives only basic project information.
 - Android Studio
 - Node.js 
 - Vs Code
-- Figma
+
 
 
 <br>
