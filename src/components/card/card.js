@@ -4,6 +4,7 @@ import {View, Text} from 'react-native';
 
 import styles from './card.style';
 
+//card propsundan gelen detayları ayırıp döndürür
 const Card = ({card}) => {
   return (
     <View style={styles.container}>

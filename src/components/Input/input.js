@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './input.style';
 
+// inputları ortak bir componentte tanımladık propslarını seçtik
 function input({onType, placeholder, iconName, isSecure, value}) {
   return (
     <View style={styles.container}>

@@ -62,6 +62,7 @@ const HomeView = ({navigation}) => {
   );
 };
 
+//styles kodları eklendi
 const styles = StyleSheet.create({
   container: {
     flex: 1,

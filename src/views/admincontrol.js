@@ -18,8 +18,6 @@ import {Formik} from 'formik';
 //hazırladığımız componentslerden buton ve input comps çektik
 import Button from '../components/button/button';
 import Input from '../components/Input';
-//firebase auth library
-import auth from '@react-native-firebase/auth';
 //firebase db lib
 import database from '@react-native-firebase/database';
 //flash message imports
