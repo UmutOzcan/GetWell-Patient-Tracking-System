@@ -1,17 +1,12 @@
 # GetWell Patient Tracking System
 
-<br>
-
-This readme file gives only basic project information.
-
-<br>
+![Welcome Screen](assets/welcome.JPG)
+![Login Screen](assets/login.JPG)
+![Home Screen](assets/home.JPG)
 
 ## Introduction
-<br>
 
 ### Techs, Libs & Packages  🚀
-
-<br>
 
 - React Native
 - React Navigation
@@ -20,25 +15,18 @@ This readme file gives only basic project information.
 - Firebase
 - flash-messages
 - Android Studio
-- Node.js 
+- Node.js
 - Vs Code
-
-
-
-<br>
-
 
 ### Warning ⚡
 
 Project content is in Turkish.
 
-<br>
-
 ## Beginning
 
 Clone this repository on your local machine.
 
-```
+```bash
 git clone https://github.com/UmutOzcan/GetWell-Patient-Tracking-System
 ```
 
@@ -46,26 +34,26 @@ git clone https://github.com/UmutOzcan/GetWell-Patient-Tracking-System
 
 To use it after cloning the project:
 
-```
+```bash
 cd ./HastaTakipApp
 ```
 
 Run the following commands in the project folder to install the project dependencies.
 
-```
+```bash
 npm init
 npm install
 ```
+
 These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Available Scripts
 
 In the project directory you can run:
-```
+
+```bash
 npx react-native run-android
 ```
-
-<br>
 
 ## For more information
 
